@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/*
+* *************************************************************************
+* 全体設定
+* *************************************************************************
+*/
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: sans-serif;
+  background: #000;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+* *************************************************************************
+* 個別設定
+* *************************************************************************
+*/
+#container {
+  max-width: 1920px;
+  padding: 50px;
+}
+#btn-cont {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+button {
+  padding: 5px 8px;
+  font-size: 1.6rem;
+  color: #fff;
+  background: #000;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  transition: color .3s, background .3s;
+  cursor: pointer;
+}
+button:hover {
+  color: #000;
+  background: #fff;
+}
+#box {
+  width: 10vw;
+  height: 10vw;
+  background: #fff;
+}
