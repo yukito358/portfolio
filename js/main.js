@@ -9,6 +9,7 @@
     gsap.set(box, {
       x: 0,
       y: 0,
+      rotate: 0,
     });
   };
 
@@ -43,6 +44,23 @@
     })
     .set(box, {
       y: 0,
+    });
+  });
+
+  // rotate
+  document.getElementById('button_3').addEventListener('click', () => {
+
+    resetAnime();
+
+    gsap.timeline()
+    .to(box, {
+      rotate: 360,
+      duration: 2,
+      ease: 'power4.out',
+      overwrite: true,
+    })
+    .set(box, {
+      rotate: 0,
     });
   });
 }
