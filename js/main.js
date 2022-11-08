@@ -10,6 +10,7 @@
       x: 0,
       y: 0,
       rotate: 0,
+      scale: 1,
     });
   };
 
@@ -61,6 +62,40 @@
     })
     .set(box, {
       rotate: 0,
+    });
+  });
+
+  // scale(+)
+  document.getElementById('button_4').addEventListener('click', () => {
+
+    resetStyle();
+
+    gsap.timeline()
+    .to(box, {
+      scale: 2,
+      duration: 2,
+      ease: 'power4.out',
+      overwrite: true,
+    })
+    .set(box, {
+      scale: 1,
+    });
+  });
+
+  // scale(-)
+  document.getElementById('button_5').addEventListener('click', () => {
+
+    resetStyle();
+
+    gsap.timeline()
+    .to(box, {
+      scale: 0.5,
+      duration: 2,
+      ease: 'power4.out',
+      overwrite: true,
+    })
+    .set(box, {
+      scale: 1,
     });
   });
 }
