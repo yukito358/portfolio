@@ -4,8 +4,8 @@
   // ボックスの取得
   const box = document.querySelector('#box');
 
-  // アニメーションリセット用の関数
-  const resetAnime = function () {
+  // スタイルリセット用の関数
+  const resetStyle = function () {
     gsap.set(box, {
       x: 0,
       y: 0,
@@ -16,7 +16,7 @@
   // translateX
   document.getElementById('button_1').addEventListener('click', () => {
 
-    resetAnime();
+    resetStyle();
 
     gsap.timeline()
     .to(box, {
@@ -33,7 +33,7 @@
   // translateY
   document.getElementById('button_2').addEventListener('click', () => {
 
-    resetAnime();
+    resetStyle();
 
     gsap.timeline()
     .to(box, {
@@ -50,7 +50,7 @@
   // rotate
   document.getElementById('button_3').addEventListener('click', () => {
 
-    resetAnime();
+    resetStyle();
 
     gsap.timeline()
     .to(box, {
