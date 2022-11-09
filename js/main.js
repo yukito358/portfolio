@@ -13,6 +13,8 @@
       scale: 1,
       skewX: 0,
       skewY: 0,
+      opacity: 1,
+      borderRadius: 0,
     });
   };
 
@@ -134,6 +136,55 @@
       skewY: 0,
     });
   });
+
+  // opacity
+  document.getElementById('button_8').addEventListener('click', () => {
+
+    resetStyle();
+
+    gsap.timeline()
+    .to(box, {
+      opacity: 0,
+      duration: 2,
+      ease: 'power4.out',
+      overwrite: true,
+    })
+    .set(box, {
+      opacity: 1,
+    });
+  });
+
+  // b-radius
+  document.getElementById('button_9').addEventListener('click', () => {
+
+    resetStyle();
+
+    gsap.timeline()
+    .to(box, {
+      borderRadius: '15px',
+      duration: 2,
+      ease: 'power4.out',
+      overwrite: true,
+    })
+    .set(box, {
+      borderRadius: 0,
+    });
+  });
+
+  // colorChange
+  document.querySelectorAll('.color-change').forEach(btn => {
+    btn.addEventListener('click', () => {
+
+      const color = btn.dataset.color;
+
+      gsap.to(box, {
+        backgroundColor: color,
+        duration: 2,
+        ease: 'power4.out',
+      });
+    });
+  });
 }
 
-// リセット関数あり・オーバーライト設定なしで、アニメーションの実行中に他のボタンを押して別のアニメーションを実行した際、リセット関数によってまず初期状態がリセットされると思われるが、何故かそうならない。
+// バウンスなどの特殊な動き(ラジオボタン形式にするかも)
+// オーバーライトの有無(ラジオボタン形式にするかも)

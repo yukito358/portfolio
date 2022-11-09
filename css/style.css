@@ -31,9 +31,14 @@ img {
   margin-bottom: 25px;
   padding-bottom: 25px;
   border-bottom: 1px solid #fff;
+}
+#btn-cont-inner {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+#btn-cont-inner:not(:last-child) {
+  margin-bottom: 10px;
 }
 button {
   padding: 5px 8px;
@@ -45,9 +50,65 @@ button {
   transition: color .3s, background .3s;
   cursor: pointer;
 }
+button.red {
+  color: #ff0000;
+  border-color: #ff0000;
+}
+button.orange {
+  color: #ff7f00;
+  border-color: #ff7f00;
+}
+button.yellow {
+  color: #ffff00;
+  border-color: #ffff00;
+}
+button.green {
+  color: #00ff00;
+  border-color: #00ff00;
+}
+button.skyblue {
+  color: #00ffff;
+  border-color: #00ffff;
+}
+button.blue {
+  color: #0000ff;
+  border-color: #0000ff;
+}
+button.purple {
+  color: #7f00ff;
+  border-color: #7f00ff;
+}
 button:hover {
   color: #000;
   background: #fff;
+}
+button.red:hover {
+  color: #000;
+  background-color: #ff0000;
+}
+button.orange:hover {
+  color: #000;
+  background-color: #ff7f00;
+}
+button.yellow:hover {
+  color: #000;
+  background-color: #ffff00;
+}
+button.green:hover {
+  color: #000;
+  background-color: #00ff00;
+}
+button.skyblue:hover {
+  color: #000;
+  background-color: #00ffff;
+}
+button.blue:hover {
+  color: #000;
+  background-color: #0000ff;
+}
+button.purple:hover {
+  color: #000;
+  background-color: #7f00ff;
 }
 #box {
   width: 8vw;
