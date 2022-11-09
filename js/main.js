@@ -9,8 +9,10 @@
     gsap.set(box, {
       x: 0,
       y: 0,
-      rotate: 0,
+      rotation: 0,
       scale: 1,
+      skewX: 0,
+      skewY: 0,
     });
   };
 
@@ -48,20 +50,20 @@
     });
   });
 
-  // rotate
+  // rotation
   document.getElementById('button_3').addEventListener('click', () => {
 
     resetStyle();
 
     gsap.timeline()
     .to(box, {
-      rotate: 360,
+      rotation: 360,
       duration: 2,
       ease: 'power4.out',
       overwrite: true,
     })
     .set(box, {
-      rotate: 0,
+      rotation: 0,
     });
   });
 
@@ -96,6 +98,40 @@
     })
     .set(box, {
       scale: 1,
+    });
+  });
+
+  // skewX
+  document.getElementById('button_6').addEventListener('click', () => {
+
+    resetStyle();
+
+    gsap.timeline()
+    .to(box, {
+      skewX: '45deg',
+      duration: 2,
+      ease: 'power4.out',
+      overwrite: true,
+    })
+    .set(box, {
+      skewX: 0,
+    });
+  });
+
+  // skewY
+  document.getElementById('button_7').addEventListener('click', () => {
+
+    resetStyle();
+
+    gsap.timeline()
+    .to(box, {
+      skewY: '45deg',
+      duration: 2,
+      ease: 'power4.out',
+      overwrite: true,
+    })
+    .set(box, {
+      skewY: 0,
     });
   });
 }
