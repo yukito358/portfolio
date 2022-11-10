@@ -13,7 +13,7 @@
 <body>
   <div id="container">
     <div id="btn-cont">
-      <div id="btn-cont-inner">
+      <div class="btn-cont-inner">
         <button id="button_1">translateX</button>
         <button id="button_2">translateY</button>
         <button id="button_3">rotation</button>
@@ -24,7 +24,25 @@
         <button id="button_8">opacity</button>
         <button id="button_9">b-radius</button>
       </div>
-      <div id="btn-cont-inner">
+      <div class="btn-cont-inner">
+        <form id="ease-change">
+          <input id="power4" type="radio" name="ease-change" value="power4.out" checked>
+          <label for="power4">power4</label>
+          <input id="linear" type="radio" name="ease-change" value="none">
+          <label for="linear">linear</label>
+          <input id="back" type="radio" name="ease-change" value="back.out">
+          <label for="back">back</label>
+          <input id="bounce" type="radio" name="ease-change" value="bounce.out">
+          <label for="bounce">bounce</label>
+          <input id="elastic" type="radio" name="ease-change" value="elastic.out(1, 0.3)">
+          <label for="elastic">elastic</label>
+          <input id="steps" type="radio" name="ease-change" value="steps(12)">
+          <label for="steps">steps</label>
+          <input id="circ" type="radio" name="ease-change" value="circ.out">
+          <label for="circ">circ</label>
+        </form>
+      </div>
+      <div class="btn-cont-inner">
         <button id="button_10" class="color-change white" data-color="#ffffff">white</button>
         <button id="button_11" class="color-change red" data-color="#ff0000">red</button>
         <button id="button_12" class="color-change orange" data-color="#ff7f00">orange</button>

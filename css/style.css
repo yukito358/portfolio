@@ -9,6 +9,7 @@ html {
   font-size: 62.5%;
 }
 body {
+  color: #fff;
   font-family: sans-serif;
   background: #000;
 }
@@ -32,12 +33,12 @@ img {
   padding-bottom: 25px;
   border-bottom: 1px solid #fff;
 }
-#btn-cont-inner {
+.btn-cont-inner {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
-#btn-cont-inner:not(:last-child) {
+.btn-cont-inner:not(:last-child) {
   margin-bottom: 10px;
 }
 button {
@@ -109,6 +110,31 @@ button.blue:hover {
 button.purple:hover {
   color: #000;
   background-color: #7f00ff;
+}
+#ease-change {
+  display: flex;
+  gap: 8px;
+}
+#ease-change input[type="radio"] {
+  display: none;
+}
+#ease-change label {
+  padding: 5px 8px;
+  font-size: 1.6rem;
+  color: #fff;
+  background: #000;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  transition: color .3s, background .3s;
+  cursor: pointer;
+}
+#ease-change label:hover {
+  color: #000;
+  background: #fff;
+}
+#ease-change input[type="radio"]:checked + label {
+  color: #000;
+  background: #fff;
 }
 #box {
   width: 8vw;

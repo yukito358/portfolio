@@ -27,7 +27,7 @@
     .to(box, {
       x: 500,
       duration: 2,
-      ease: 'power4.out',
+      ease: ease,
       overwrite: true,
     })
     .set(box, {
@@ -44,7 +44,7 @@
     .to(box, {
       y: 300,
       duration: 2,
-      ease: 'power4.out',
+      ease: ease,
       overwrite: true,
     })
     .set(box, {
@@ -61,7 +61,7 @@
     .to(box, {
       rotation: 360,
       duration: 2,
-      ease: 'power4.out',
+      ease: ease,
       overwrite: true,
     })
     .set(box, {
@@ -78,7 +78,7 @@
     .to(box, {
       scale: 2,
       duration: 2,
-      ease: 'power4.out',
+      ease: ease,
       overwrite: true,
     })
     .set(box, {
@@ -95,7 +95,7 @@
     .to(box, {
       scale: 0.5,
       duration: 2,
-      ease: 'power4.out',
+      ease: ease,
       overwrite: true,
     })
     .set(box, {
@@ -112,7 +112,7 @@
     .to(box, {
       skewX: '45deg',
       duration: 2,
-      ease: 'power4.out',
+      ease: ease,
       overwrite: true,
     })
     .set(box, {
@@ -129,7 +129,7 @@
     .to(box, {
       skewY: '45deg',
       duration: 2,
-      ease: 'power4.out',
+      ease: ease,
       overwrite: true,
     })
     .set(box, {
@@ -146,7 +146,7 @@
     .to(box, {
       opacity: 0,
       duration: 2,
-      ease: 'power4.out',
+      ease: ease,
       overwrite: true,
     })
     .set(box, {
@@ -163,13 +163,22 @@
     .to(box, {
       borderRadius: '15px',
       duration: 2,
-      ease: 'power4.out',
+      ease: ease,
       overwrite: true,
     })
     .set(box, {
       borderRadius: 0,
     });
   });
+
+  // easeChange
+  let ease;
+
+  document.querySelectorAll('#ease-change input[type="radio"]').forEach(radio => {
+    radio.addEventListener('click', () => {
+      ease = radio.value;
+    });
+  })
 
   // colorChange
   document.querySelectorAll('.color-change').forEach(btn => {
@@ -186,5 +195,5 @@
   });
 }
 
-// バウンスなどの特殊な動き(ラジオボタン形式にするかも)
+// フォームのレンジを使って、スピード調節をできるようにしたい(durationを5段階変更)
 // オーバーライトの有無(ラジオボタン形式にするかも)
