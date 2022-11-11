@@ -41,7 +41,7 @@ img {
 .sub-ttl {
   font-size: 2.2rem;
   font-weight: bold;
-  flex-basis: 90px;
+  flex-basis: 115px;
 }
 .btn-cont-inner {
   display: flex;
@@ -50,7 +50,7 @@ img {
   gap: 8px;
 }
 .btn-cont-inner:not(:last-child) {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 button {
   padding: 5px 8px;
@@ -146,6 +146,27 @@ button.purple:hover {
 #ease-change input[type="radio"]:checked + label {
   color: #000;
   background: #fff;
+}
+#dur-change {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#dur-change input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 3px;
+  background: #fff;
+  cursor: pointer;
+}
+#dur-change input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 7px;
+  height: 20px;
+  background: #fff;
+}
+.dur-speed {
+  font-size: 2.2rem;
 }
 #box {
   width: 8vw;
