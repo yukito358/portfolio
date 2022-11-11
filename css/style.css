@@ -156,14 +156,25 @@ button.purple:hover {
   appearance: none;
   -webkit-appearance: none;
   height: 3px;
-  background: #fff;
+  background: rgba(255,255,255,.85);
   cursor: pointer;
 }
 #dur-change input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
   -webkit-appearance: none;
   width: 7px;
   height: 20px;
   background: #fff;
+}
+#dur-change input[type="range"]::-moz-range-thumb {
+  width: 7px;
+  height: 20px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+}
+#dur-change input[type="range"]::-moz-focus-outer {
+  border: 0;
 }
 .dur-speed {
   font-size: 2.2rem;

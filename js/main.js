@@ -26,7 +26,7 @@
     gsap.timeline()
     .to(box, {
       x: 500,
-      duration: 2,
+      duration: dur,
       ease: ease,
       overwrite: true,
     })
@@ -43,7 +43,7 @@
     gsap.timeline()
     .to(box, {
       y: 300,
-      duration: 2,
+      duration: dur,
       ease: ease,
       overwrite: true,
     })
@@ -193,8 +193,16 @@
       });
     });
   });
+
+  // durationChange 
+  let dur = 3;
+  const durRange = document.querySelector('#dur-change input[type="range"]');
+
+  durRange.addEventListener('input', () => {
+    dur = parseInt(durRange.value, 10);
+    console.log(dur);
+  });
 }
 
-// フォームのレンジを使って、スピード調節をできるようにしたい(durationを5段階変更)
 // オーバーライトの有無(ラジオボタン形式にするかも)
 // colorをeaseと同じく、選択されているものを色付きになるように変更する
