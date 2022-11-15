@@ -60,7 +60,7 @@
     gsap.timeline()
     .to(box, {
       rotation: 360,
-      duration: 2,
+      duration: dur,
       ease: ease,
       overwrite: true,
     })
@@ -77,7 +77,7 @@
     gsap.timeline()
     .to(box, {
       scale: 2,
-      duration: 2,
+      duration: dur,
       ease: ease,
       overwrite: true,
     })
@@ -94,7 +94,7 @@
     gsap.timeline()
     .to(box, {
       scale: 0.5,
-      duration: 2,
+      duration: dur,
       ease: ease,
       overwrite: true,
     })
@@ -111,7 +111,7 @@
     gsap.timeline()
     .to(box, {
       skewX: '45deg',
-      duration: 2,
+      duration: dur,
       ease: ease,
       overwrite: true,
     })
@@ -128,7 +128,7 @@
     gsap.timeline()
     .to(box, {
       skewY: '45deg',
-      duration: 2,
+      duration: dur,
       ease: ease,
       overwrite: true,
     })
@@ -145,7 +145,7 @@
     gsap.timeline()
     .to(box, {
       opacity: 0,
-      duration: 2,
+      duration: dur,
       ease: ease,
       overwrite: true,
     })
@@ -162,7 +162,7 @@
     gsap.timeline()
     .to(box, {
       borderRadius: '15px',
-      duration: 2,
+      duration: dur,
       ease: ease,
       overwrite: true,
     })
