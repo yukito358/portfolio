@@ -18,7 +18,7 @@
     });
   };
 
-  // translateX
+  // Motion_translateX
   document.getElementById('button_1').addEventListener('click', () => {
 
     resetStyle();
@@ -35,7 +35,7 @@
     });
   });
 
-  // translateY
+  // Motion_translateY
   document.getElementById('button_2').addEventListener('click', () => {
 
     resetStyle();
@@ -52,7 +52,7 @@
     });
   });
 
-  // rotation
+  // Motion_rotation
   document.getElementById('button_3').addEventListener('click', () => {
 
     resetStyle();
@@ -69,7 +69,7 @@
     });
   });
 
-  // scale(+)
+  // Motion_scale(+)
   document.getElementById('button_4').addEventListener('click', () => {
 
     resetStyle();
@@ -86,7 +86,7 @@
     });
   });
 
-  // scale(-)
+  // Motion_scale(-)
   document.getElementById('button_5').addEventListener('click', () => {
 
     resetStyle();
@@ -103,7 +103,7 @@
     });
   });
 
-  // skewX
+  // Motion_skewX
   document.getElementById('button_6').addEventListener('click', () => {
 
     resetStyle();
@@ -120,7 +120,7 @@
     });
   });
 
-  // skewY
+  // Motion_skewY
   document.getElementById('button_7').addEventListener('click', () => {
 
     resetStyle();
@@ -137,7 +137,7 @@
     });
   });
 
-  // opacity
+  // Motion_opacity
   document.getElementById('button_8').addEventListener('click', () => {
 
     resetStyle();
@@ -154,7 +154,7 @@
     });
   });
 
-  // b-radius
+  // Motion_b-radius
   document.getElementById('button_9').addEventListener('click', () => {
 
     resetStyle();
@@ -171,7 +171,7 @@
     });
   });
 
-  // easeChange
+  // Ease
   let ease;
 
   document.querySelectorAll('#ease-change input[type="radio"]').forEach(radio => {
@@ -180,21 +180,18 @@
     });
   })
 
-  // colorChange
-  document.querySelectorAll('.color-change').forEach(btn => {
-    btn.addEventListener('click', () => {
-
-      const color = btn.dataset.color;
-
+  // Color
+  document.querySelectorAll('#color-change input[type="radio"]').forEach(radio => {
+    radio.addEventListener('click', () => {
       gsap.to(box, {
-        backgroundColor: color,
-        duration: 2,
-        ease: 'power4.out',
+        background: radio.value,
+        duration: .3,
+        ease: 'none',
       });
     });
   });
 
-  // durationChange 
+  // Duration 
   let dur = 3;
   const durRange = document.querySelector('#dur-change input[type="range"]');
 
@@ -204,5 +201,4 @@
   });
 }
 
-// オーバーライトの有無(ラジオボタン形式にするかも)
-// colorをeaseと同じく、選択されているものを色付きになるように変更する
+// アニメーション終了時の挙動制御ボタン作るかも
