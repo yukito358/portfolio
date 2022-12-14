@@ -18,11 +18,13 @@
     })
     // ボックス要素のアニメーション
     .from('.rect', {
-      // y: 15,
       alpha: 0,
       repeat: -1,
       repeatDelay: 1.5,
-      stagger: 0.02,
+      stagger: {
+        each: 0.02,
+        from: 'random',
+      }
     });
   });
 }
