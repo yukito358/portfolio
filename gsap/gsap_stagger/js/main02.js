@@ -3,7 +3,7 @@
 {
   window.addEventListener('DOMContentLoaded', () => {
     // rect要素を生成
-    for (let i = 0; i < 72; i++) {
+    for (let i = 0; i < 84; i++) {
       const rect = document.createElement('div');
       rect.classList.add('rect');
       document.getElementById('container').appendChild(rect);
