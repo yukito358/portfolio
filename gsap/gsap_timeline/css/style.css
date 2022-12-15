@@ -9,8 +9,9 @@ html {
   font-size: 62.5%;
 }
 body {
-  background: #000;
+  margin: 5%;
   color: #fff;
+  background: #000;
 }
 img {
   max-width: 100%;
@@ -25,11 +26,8 @@ img {
 */
 /* コンテナ */
 #container {
-  padding: 5%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 6vw);
-  justify-content: center;
-  gap: 15px;
+  height: 100vh;
+  position: relative;
 }
 
 /* ローディング、タイトル */
@@ -40,6 +38,7 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,9 +50,12 @@ img {
   line-height: 1.4;
 }
 
-/* Rect */
-.rect {
-  width: 6vw;
-  height: 6vw;
+/* Box */
+#box {
+  width: 100px;
+  height: 100px;
   background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
