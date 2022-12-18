@@ -1,8 +1,21 @@
 'use strict';
 
 {
-  window.addEventListener('DOMContentLoaded', () => {
+  // 横スライドの動きの定数
+  const sideMoveRight = {
+    left: '100%',
+    xPercent: -100,
+    ease: 'linear',
+    duration: 1.2,
+  };
+  const sideMoveLeft = {
+    left: 0,
+    xPercent: 0,
+    ease: 'linear',
+    duration: 1.2,
+  };
 
+  window.addEventListener('DOMContentLoaded', () => {
     gsap.timeline()
     // ローディングのアニメーション
     .to('#loading', {
@@ -11,22 +24,20 @@
       delay: 2,
     })
     // ボックス要素のアニメーション
+    .set('#box', {
+      opacity: 1,
+    }, '+=.3')
     .to('#box', {
-      left: '100%',
-      xPercent: -100,
-      ease: 'linear',
-      duration: 1.2,
-    })
+      ...sideMoveRight,
+      rotate: 1440,
+    }, '+=1')
     .to('#box', {
       y: 100,
       ease: 'linear',
       duration: .5,
     })
     .to('#box', {
-      left: 0,
-      xPercent: 0,
-      ease: 'linear',
-      duration: 1.2,
+      ...sideMoveLeft,
     })
     .to('#box', {
       y: 200,
@@ -34,10 +45,7 @@
       duration: .5,
     })
     .to('#box', {
-      left: '100%',
-      xPercent: -100,
-      ease: 'linear',
-      duration: 1.2,
+      ...sideMoveRight,
     })
     .to('#box', {
       y: 300,
@@ -45,10 +53,7 @@
       duration: .5,
     })
     .to('#box', {
-      left: 0,
-      xPercent: 0,
-      ease: 'linear',
-      duration: 1.2,
+      ...sideMoveLeft,
     })
     .to('#box', {
       y: 400,
@@ -56,14 +61,9 @@
       duration: .5,
     })
     .to('#box', {
-      left: '100%',
-      xPercent: -100,
-      ease: 'linear',
-      duration: 1.2,
+      ...sideMoveRight,
     })
   });
 }
 
-// 画面端までの横移動もう少し良い方法はないか
-// easeとdurationで同じ記述を何度も書いているので、シンプルにまとめたい
-// 白ボックスが、ローディングのフェードアウトと被って表示されるのを直したい
+// 画面端までの横移動と、ローディングとボックス被らないようにするコードをもう少しよくできないか

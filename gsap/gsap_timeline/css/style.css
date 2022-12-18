@@ -55,6 +55,7 @@ img {
   width: 100px;
   height: 100px;
   background: #fff;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
