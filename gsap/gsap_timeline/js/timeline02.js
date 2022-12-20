@@ -6,7 +6,7 @@
     for (let i = 0; i < 84; i++) {
       const rect = document.createElement('div');
       rect.classList.add('rect');
-      document.getElementById('container').appendChild(rect);
+      document.getElementById('container02').appendChild(rect);
     }
 
     gsap.timeline()
@@ -19,12 +19,34 @@
     // ボックス要素のアニメーション
     .from('.rect', {
       alpha: 0,
-      repeat: -1,
-      repeatDelay: 1.5,
       stagger: {
-        each: 0.02,
-        from: 'random',
-      }
-    });
+        each: 0.08,
+        grid: 'auto',
+        from: 'center',
+      },
+    })
+    .to('.rect', {
+      borderRadius: '50%',
+      duration: .5,
+    })
+    .to('.rect', {
+      backgroundColor: 'red',
+      duration: .5,
+      delay: .4,
+    })
+    .to('.rect', {
+      borderRadius: 0,
+      duration: .5,
+      delay: .4,
+    })
+    .to('.rect', {
+      backgroundColor: '#fff',
+      delay: .4,
+      stagger: {
+        each: 0.08,
+        grid: 'auto',
+        from: 'edges',
+      },
+    })
   });
 }
