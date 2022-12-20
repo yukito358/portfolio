@@ -1,18 +1,25 @@
 'use strict';
 
 {
-  // 横スライドの動きの定数
-  const sideMoveRight = {
+  // ボックス要素
+  const box = document.getElementById('box');
+
+  // スライドの動きの定数
+  const moveRight = {
     left: '100%',
     xPercent: -100,
     ease: 'linear',
     duration: 1.2,
   };
-  const sideMoveLeft = {
+  const moveLeft = {
     left: 0,
     xPercent: 0,
     ease: 'linear',
     duration: 1.2,
+  };
+  const moveDown = {
+    duration: .5,
+    ease: 'linear',
   };
 
   window.addEventListener('DOMContentLoaded', () => {
@@ -24,46 +31,75 @@
       delay: 2,
     })
     // ボックス要素のアニメーション
-    .set('#box', {
+    .set(box, {
       opacity: 1,
     }, '+=.3')
-    .to('#box', {
-      ...sideMoveRight,
+    .to(box, {
+      ...moveRight,
       rotate: 1440,
     }, '+=1')
-    .to('#box', {
+    .to(box, {
       y: 100,
+      ...moveDown,
+    })
+    .to(box, {
+      opacity: 0,
+      duration: .6,
       ease: 'linear',
-      duration: .5,
     })
-    .to('#box', {
-      ...sideMoveLeft,
-    })
-    .to('#box', {
+    .to(box, {
+      ...moveLeft,
+    }, '<')
+    .to(box, {
+      opacity: 1,
+      duration: .6,
+      ease: 'linear',
+    }, '-=50%')
+    .to(box, {
       y: 200,
+      ...moveDown,
+    })
+    .to(box, {
+      scale: 3,
+      duration: .6,
       ease: 'linear',
-      duration: .5,
     })
-    .to('#box', {
-      ...sideMoveRight,
-    })
-    .to('#box', {
+    .to(box, {
+      ...moveRight,
+    }, '<')
+    .to(box, {
+      scale: 1,
+      duration: .6,
+      ease: 'linear',
+    }, '-=50%')
+    .to(box, {
       y: 300,
+      ...moveDown,
+    })
+    .to(box, {
+      scale: .1,
+      duration: .6,
       ease: 'linear',
-      duration: .5,
     })
-    .to('#box', {
-      ...sideMoveLeft,
-    })
-    .to('#box', {
+    .to(box, {
+      ...moveLeft,
+    }, '<')
+    .to(box, {
+      scale: 1,
+      duration: .6,
+      ease: 'linear',
+    }, '-=50%')
+    .to(box, {
       y: 400,
-      ease: 'linear',
-      duration: .5,
+      ...moveDown,
     })
-    .to('#box', {
-      ...sideMoveRight,
+    .to(box, {
+      background: 'hsl(+=360, 100%, 40%)',
+      duration: 1.2,
+      ease: 'circ',
     })
+    .to(box, {
+      ...moveRight,
+    }, '<')
   });
 }
-
-// 画面端までの横移動と、ローディングとボックス被らないようにするコードをもう少しよくできないか
