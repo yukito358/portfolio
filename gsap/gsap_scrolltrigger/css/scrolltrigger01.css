@@ -1,1 +1,64 @@
 @charset "utf-8";
+
+html {
+  font-size: 62.5%;
+}
+body {
+  color: #fff;
+  background: #000;
+}
+#main-visual,
+.section {
+  margin: 25px;
+  width: calc(100% - 50px);
+  height: calc(100vh - 50px);
+  border: 1px solid #fff;
+}
+
+/* メインビジュアル、タイトル */
+#main-visual {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: 9rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* セクション */
+section {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+h2 {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  font-size: 5rem;
+  font-weight: bold;
+  border-bottom: 1px solid #fff;
+}
+.txt {
+  font-size: 2.4rem;
+}
+.txt:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+/* スクロールダウン */
+#scrollLineBox {
+  margin-top: 40px;
+  overflow: hidden;
+}
+#scrollLine {
+  width: 1px;
+  height: 75px;
+  margin: 0 auto;
+  background: #fff;
+  display: block;
+}
