@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文字数計算</title>
+
+  <style>
+    *:focus {
+      outline: none;
+    }
+    body {
+      background: #c7c5bf;
+    }
+    h1 {
+      margin-bottom: 25px;
+    }
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #txt {
+      width: 500px;
+      height: 180px;
+      padding: 8px 10px;
+      border-radius: 5px;
+    }
+    .btn-cont {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+    }
+    #count, #reset {
+      padding: 5px 15px;
+      cursor: pointer;
+    }
+    .result-cont {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    label {
+      vertical-align: middle;
+    }
+    #result,
+    #result_nospace {
+      width: 3em;
+      padding: 2px;
+      text-align: right;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <h1>文字数カウント</h1>
+    <textarea id="txt" placeholder="テキストを入れて下さい。"></textarea>
+    <div class="btn-cont">
+      <button id="count">COUNT</button>
+      <button id="reset">RESET</button>
+    </div>
+    <div class="result-cont">
+      <div>
+        <label for="result">文字数（スペース・改行込み）</label>
+        <input id="result" type="text" value="0">
+      </div>
+      <div>
+        <label for="result_nospace">文字数（スペース・改行なし）</label>
+        <input id="result_nospace" type="text" value="0">
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const txtArea = document.getElementById('txt');
+    const countBtn = document.getElementById('count');
+    const resetBtn = document.getElementById('reset');
+    const result = document.getElementById('result');
+    const resultNoSpace = document.getElementById('result_nospace');
+
+    countBtn.addEventListener('click', () => {
+      result.value = txtArea.value.length;
+      resultNoSpace.value = txtArea.value.replaceAll(/\s/g, '').length;
+    });
+    
+    resetBtn.addEventListener('click', () => {
+      txtArea.value = '';
+      result.value = '0';
+      resultNoSpace.value = '0';
+    });
+  </script>
+</body>
+</html>
